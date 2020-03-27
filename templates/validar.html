@@ -1,0 +1,6 @@
+{% extends "base.html" %} {% block title %} Contraseña Valida {% endblock %} {%
+block content %} {% with messages =
+get_flashed_messages(category_filter=["success"]) %} {% if messages %} {% for
+message in messages %}
+<h1 class="success">{{ message }}</h1>
+{% endfor %} {% endif %} {% endwith %} {% endblock %}

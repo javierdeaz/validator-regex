@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Style.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='img/python.ico')}}" />
+    <!-- <link rel="shortcut icon" href="../static/img/python.ico"/> -->
+    <!-- <link rel="stylesheet" href="../static/css/Style.css"> -->
+</head>
+
+<body>
+    <section>
+        <div class="login-box">
+            <img src="../static/img/python.png" class="avatar" alt="Avatar Image">
+            <h1 class="titulo">Expresión Regular</h1>
+            <form action="/validar" method="GET">
+                <label for="username">Validar Contraseña</label>
+                <input type="text" placeholder="Enter Password" required="" name="passw" autocomplete="off">
+                <p><strong> --* La contraseña debe contener:</strong></br>El primer caracter debe ser una mayúscula, los
+                    siguientes 3 caracteres son números, después los siguientes caracteres deben ser letras minúsculas y
+                    los últimos tres deben ser caracteres especiales.</p></br>
+                <input type="submit" value="Validar">
+
+                <!-- ZONA DE VALIDACIÓN DE PATRON -->
+                {% block content %}
+
+                {% endblock %}               
+            </form>
+        </div>
+
+    </section>
+</body>
+
+</html>
